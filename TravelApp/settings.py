@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'TravelApp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Trip',
+        'USER': 'BekaDev',
+        'PASSWORD': 'q1w2e3r4t5',
+        'HOST': 'database-3.co04tyhygwb8.eu-central-1.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
