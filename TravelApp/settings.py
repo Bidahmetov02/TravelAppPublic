@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'main',
+
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,14 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AWS_ACCESS_KEY_ID = 'AKIAXZHYURC4ZWVLM6UV'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'travelappbucket'
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+AWS_S3_REGION_NAME = 'eu-central-1'
