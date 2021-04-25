@@ -18,7 +18,7 @@ class Place(models.Model):
         return result
 
     def get_affordable_days(self, num_people, budget):
-        hotel = self.hotel_set.filter(num_beds=num_people)[0]
+        hotel = self.hotel_set.get(num_beds=num_people)
         day_cost = hotel.night_cost  + self.food_cost
         result = budget / day_cost
 
