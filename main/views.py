@@ -44,11 +44,13 @@ def detail_view(request, place_name):
     place = Place.objects.get(name=place_name)
     entertaiments = place.entertaiment_set.all()
     hotels = place.hotel_set.all()
+    hotel = hotels[0]
 
     ctx = {
        'place': place,
        'entertaiments': entertaiments, 
        'hotels': hotels,
+       'hotel': hotel,
     }
 
     return render(request, 'main/detail.html', ctx)
