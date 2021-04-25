@@ -21,7 +21,7 @@ import os
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'z^u+)2&*ey%#rv44$dwppdavv9k$buheav630w0@)yht6bplwe'
+SECRET_KEY = 'hidden'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'TravelApp.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Trip',
-        'USER': 'BekaDev',
-        'PASSWORD': 'q1w2e3r4t5',
-        'HOST': 'database-1.co04tyhygwb8.eu-central-1.rds.amazonaws.com',
+        'NAME': 'hidden',
+        'USER': 'hidden',
+        'PASSWORD': 'hidden',
+        'HOST': 'hidden',
         'PORT': '5432',
     }
 }
@@ -134,9 +134,9 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-AWS_ACCESS_KEY_ID = 'AKIAXZHYURC4ZWVLM6UV'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'travelappbucket'
+AWS_ACCESS_KEY_ID = 'hidden'
+AWS_SECRET_ACCESS_KEY = 'hidden'
+AWS_STORAGE_BUCKET_NAME = 'hidden'
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
