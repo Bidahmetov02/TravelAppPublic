@@ -22,9 +22,9 @@ def algorithm(request):
     for p in places:
         try: 
             int(budget) - (p.flight_cost * int(num_people)) > 3 * p.cost_of_day(int(num_people))
+            set.append(p)
         except:
             print("Error has been caught!")
-        set.append(p)
 
     # print(place.get_affordable_days(num_people, int(budget)))
 
