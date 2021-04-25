@@ -30,10 +30,18 @@ class Entertaiment(models.Model):
         return self.title
 
 
+ROOMS = (
+    (1, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+)
+
 class Hotel(models.Model):
     title = models.CharField(max_length=200)
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     night_cost = models.IntegerField()
+    num_beds = models.IntegerField(choices=ROOMS, verbose_name="For how many people: ", default=1)
     photo1 = models.ImageField(upload_to="images/", blank=True, verbose_name="Image 1")
     photo2 = models.ImageField(upload_to="images/", blank=True, verbose_name="Image 2")
     photo3 = models.ImageField(upload_to="images/", blank=True, verbose_name="Image 2")
