@@ -1,23 +1,64 @@
-{% extends 'base.html' %}
 
+
+{% extends 'base.html' %}
+{% block css %}
+<style>
+    body{
+        background-color: dimgray;
+    }
+</style>
+{% endblock %}
 {% block content %}
-    <form action="{% url 'algorithm' %}" method="POST">
-        {% csrf_token %}
-        <input placeholder="Your budget" type="integer" name="budget">
-        <select name="num_people" id="num_people">
-            <label for="num_people">Сколько вас?</label>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-        </select>
-        <select name="category" id="cetegory">
-            <label for="cetegoryes">Выберите категорию</label>
-            <option value="Пррирода">Пррирода</option>
-            <option value="Духовное">Духовное</option>
-            <option value="Куапание">Куапание</option>
-            <option value="Адреналин">Адреналин</option>
-        </select>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container-xl" style="display: flex; justify-content: center; align-items: center; margin-top: 12%;"> 
+        <form action="{% url 'algorithm' %}" method="POST">
+            {% csrf_token %}
+            <!-- <input placeholder="Your budget" type="integer" name="budget"> -->
+            <div class="input-group" style="width: 140%;">
+                <input type="integer" placeholder="Type your budget..." class="form-control" name="budget" aria-label="Dollar amount (with dot and two decimal places)">
+                <span class="input-group-text">KZT</span>
+            </div>
+            <!-- <select name="num_people" id="num_people">
+                <span>Сколько вас?</span>
+                <label for="num_people">Сколько вас?</label>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select> -->
+            <div style="margin-top: 10px;">
+                <select class="form-select" name="num_people" id="num_people" aria-label="Default select example" style="width: 100%;">
+                    <option selected>Количество гостей?</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                </select>
+                <hr>
+                <select name="category" id="category" class="form-select" aria-label="Default select example" style="width: 100%;">
+                    <option selected>Категории</option>
+                    <option value="Пррирода">Природа</option>
+                    <option value="Духовное">Духовное</option>
+                    <option value="Куапание">Купание</option>
+                    <option value="Адреналин">Адреналин</option>
+                </select>
+            </div>
+            
+            <!-- <select name="category" id="cetegory">
+                <label for="cetegoryes">Выберите категорию</label>
+                <option value="Пррирода">Пррирода</option>
+                <option value="Духовное">Духовное</option>
+                <option value="Куапание">Куапание</option>
+                <option value="Адреналин">Адреналин</option>
+            </select> -->
+            <hr>
+            <button type="button" class="btn btn-primary">Найти</button>
+        </form>
+    </div>
+{% endblock %}
+{% block js %}
+    <script>
+        $('select.dropdown')
+                .dropdown()
+                ;
+    </script>
 {% endblock %}

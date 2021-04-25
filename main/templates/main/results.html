@@ -3,7 +3,28 @@
 {% block content %}
 
 {% for place in set %}
-<p>{{place}}</p>
+<div style="display: flex; justify-content: center; margin-top: 10px;">
+    <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{place}}</h5>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores mollitia,
+                         similique accusamus doloribus
+                        sed repellendus pariatur possimus ullam impedit accusantium voluptatem saepe
+                         adipisci deleniti itaque nulla earum rerum quam ad!
+                    </p>
+                    <button type="button" class="btn btn-primary">Стоимость</button>
+                </div>
+            </div>
+            <div class="col-md-4" style="margin-top: 45px;">
+                <img src="{{place.photo.url}}" style="width: 100%;" alt="...">
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endfor %}
 
 {% endblock %}
