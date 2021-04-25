@@ -1,16 +1,65 @@
 {% extends 'base.html' %}
 {% block css %}
 <style>
-    body{
-        background-color: dimgray;
-    }
+    
 </style>
 {% endblock %}
 
 {% block content %}
-{{place.name}}
-<br>
-{{entertaiments}}
-<br>
-{{hotels}}
+<div style="display:flex; align-items: center; justify-content: center; flex-direction: column;">
+    <div style="display: flex; justify-content: center; flex-direction: column;">
+        <div style="width: 100%;">
+            <h2>{{place.name}}</h2>
+        </div>
+        <div>
+            <img src="{{place.photo.url}}" class="img-fluid" alt="...">
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Avia Transfer</h5>
+                    <p class="card-text">Almaty --> Split, Hoorvatia</p>
+                    <button type="button" class="btn btn-primary">{{place.flight_cost}}</button>
+                </div>
+            </div>
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{hotel.title}}</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                                content. This content is a little bit longer.</p>
+                            <button type="button" class="btn btn-primary">{{hotel.night_cost}}</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{{hotel.photo1.url}}" alt="...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 10px;" >
+            {% for e in entertaiments %}
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{e.title}}</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                                    content. This content is a little bit longer.</p>
+                                <button type="button" class="btn btn-primary">{{e.cost}}</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <img style="width: 100%;" src="{{e.photo.url}}" alt="...">
+                        </div>
+                    </div>
+                </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
 {% endblock %}

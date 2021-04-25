@@ -22,9 +22,10 @@ def algorithm(request):
     for p in places:
         try: 
             int(budget) - (p.flight_cost * int(num_people)) > 3 * p.cost_of_day(int(num_people))
+            set.append(p)   
         except:
             print("Error has been caught!")
-        set.append(p)
+        
 
     # print(place.get_affordable_days(num_people, int(budget)))
 
@@ -44,11 +45,13 @@ def detail_view(request, place_name):
     place = Place.objects.get(name=place_name)
     entertaiments = place.entertaiment_set.all()
     hotels = place.hotel_set.all()
+    hotel = hotels[0]
 
     ctx = {
        'place': place,
        'entertaiments': entertaiments, 
        'hotels': hotels,
+       'hotel': hotel,
     }
 
     return render(request, 'main/detail.html', ctx)
