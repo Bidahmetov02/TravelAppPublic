@@ -26,7 +26,7 @@ SECRET_KEY = 'z^u+)2&*ey%#rv44$dwppdavv9k$buheav630w0@)yht6bplwe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["trip-create.herokuapp.com", "127.0.0.1"]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
