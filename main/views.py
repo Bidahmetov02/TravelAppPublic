@@ -45,12 +45,16 @@ def detail_view(request, place_name):
     entertaiments = place.entertaiment_set.all()
     hotels = place.hotel_set.all()
     hotel = hotels[0]
+    total_cost = place.flight_cost + hotel.night_cost
+    for x in entertaiments:
+        total_cost += x.cost
 
     ctx = {
        'place': place,
        'entertaiments': entertaiments, 
        'hotels': hotels,
        'hotel': hotel,
+       'total_cost': total_cost,
     }
 
     return render(request, 'main/detail.html', ctx)
