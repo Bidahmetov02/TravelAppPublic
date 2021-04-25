@@ -67,5 +67,5 @@ class Hotel(models.Model):
     photo3 = models.ImageField(upload_to="images/", blank=True, verbose_name="Image 2")
 
     def __str__(self):
-        return self.title
+        return str(self.place) + " " + str(self.num_beds)
 
