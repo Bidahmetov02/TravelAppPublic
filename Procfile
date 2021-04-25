@@ -1,1 +1,1 @@
-web: gunicorn ArticleSite.wsgi --log-file -
+web: gunicorn TravelApp.wsgi --log-file -
