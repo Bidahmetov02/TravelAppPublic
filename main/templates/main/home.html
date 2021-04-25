@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="{% url 'algorithm' %}" method="POST">
+        {% csrf_token %}
+        <input placeholder="Your budget" type="integer" name="budget">
+        <select name="num_people" id="num_people">
+            <label for="num_people">Сколько вас?</label>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+        <select name="category" id="cetegory">
+            <label for="cetegoryes">Выберите категорию</label>
+            <option value="Пррирода">Пррирода</option>
+            <option value="Духовное">Духовное</option>
+            <option value="Куапание">Куапание</option>
+            <option value="Адреналин">Адреналин</option>
+        </select>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
