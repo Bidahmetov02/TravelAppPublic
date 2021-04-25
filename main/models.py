@@ -12,7 +12,7 @@ class Place(models.Model):
         return self.name
 
     def cost_of_day(self, num_people):
-        hotel = self.hotel_set.filter(num_beds=num_people)[0]
+        hotel = self.hotel_set.get(num_beds=num_people)
         result = hotel.night_cost  + self.food_cost
 
         return result
