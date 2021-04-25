@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'Trip',
         'USER': 'BekaDev',
         'PASSWORD': 'q1w2e3r4t5',
-        'HOST': 'database-3.co04tyhygwb8.eu-central-1.rds.amazonaws.com',
+        'HOST': 'database-1.co04tyhygwb8.eu-central-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }

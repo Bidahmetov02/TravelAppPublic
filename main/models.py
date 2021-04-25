@@ -24,7 +24,7 @@ class Entertaiment(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     cost = models.IntegerField()
     photo = models.ImageField(upload_to="images/", blank=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default=1)
+    category = models.ManyToManyField(Category)
 
     def __str__(self):
         return self.title
