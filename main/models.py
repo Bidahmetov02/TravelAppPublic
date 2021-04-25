@@ -24,7 +24,7 @@ class Entertaiment(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     cost = models.IntegerField()
     photo = models.ImageField(upload_to="images/", blank=True)
-    category = models.ForeignKey(Category, on_delete=models.SET_DEFAULT, default=1)
+    category = models.ManyToManyField(Category)
 
     def __str__(self):
         return self.title
@@ -34,7 +34,9 @@ class Hotel(models.Model):
     title = models.CharField(max_length=200)
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     night_cost = models.IntegerField()
-    photo = models.ImageField(upload_to="images/", blank=True)
+    photo1 = models.ImageField(upload_to="images/", blank=True, verbose_name="Image 1")
+    photo2 = models.ImageField(upload_to="images/", blank=True, verbose_name="Image 2")
+    photo3 = models.ImageField(upload_to="images/", blank=True, verbose_name="Image 2")
 
     def __str__(self):
         return self.title
