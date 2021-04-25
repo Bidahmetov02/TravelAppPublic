@@ -36,4 +36,17 @@ def algorithm(request):
     }
 
     return render(request, 'main/results.html', ctx)
+
+def detail_view(request, place_name):
+    place = Place.objects.get(name=place_name)
+    entertaiments = place.entertaiment_set.all()
+    hotels = place.hotel_set.all()
+
+    ctx = {
+       'place': place,
+       'entertaiments': entertaiments, 
+       'hotels': hotels,
+    }
+
+    return render(request, 'main/detail.html', ctx)
     
